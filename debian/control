@@ -1,0 +1,10 @@
+Package: droid4-wlanconfig
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: any
+Depends: 
+ ti-utils-wilink6, 
+ bash,
+Maintainer: Uvos <carl@uvos.xyz>
+Description: Device specific config and script for generating droid 4 / maserati wl1285 wlan chip's nvs file
