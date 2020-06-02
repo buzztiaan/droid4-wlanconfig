@@ -6,5 +6,6 @@ Architecture: any
 Depends: 
  ti-utils-wilink6, 
  bash,
+ sed,
 Maintainer: Uvos <carl@uvos.xyz>
 Description: Device specific config and script for generating droid 4 / maserati wl1285 wlan chip's nvs file
