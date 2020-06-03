@@ -1,6 +1,6 @@
 Package: droid4-wlanconfig
 Version: 1.0-1
-Section: base
+Section: droid4
 Priority: optional
 Architecture: any
 Depends: 
