@@ -1,5 +1,5 @@
-ti-utils-wilink6 (1:1.0-1) unstable; urgency=medium
+droid4-wlanconfig (1:1.0-1) unstable; urgency=medium
 
   Initial version
 
- -- Uvos <carl@uvos.xyz>  Mon, 03 Jun 2020 11:36:00 +0100
+ -- Merlijn Wajer <merlijn@wizzup.org>  Fri, 05 Jun 2020 00:26:54 +0200

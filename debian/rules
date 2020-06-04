@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/droid4-wlanconfig
