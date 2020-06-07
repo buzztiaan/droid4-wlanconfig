@@ -1,3 +1,9 @@
+droid4-wlanconfig (1:1.1-1) unstable; urgency=medium
+
+  * Attempt to ensure that old wlan rules are removed
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sun, 07 Jun 2020 23:03:29 +0200
+
 droid4-wlanconfig (1:1.0-1) unstable; urgency=medium
 
   Initial version
