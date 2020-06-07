@@ -14,6 +14,8 @@ PDSMAC=$(wilink6calibrator get nvs_mac /tmp/pds/wifi/nvs_map.bin)
 
 if [ $? -ne 0 ]; then
     echo "Error extracting mac from pds nvs"
+    umount /tmp/pds
+    rm -r /tmp/pds
     exit 1
 fi
 
