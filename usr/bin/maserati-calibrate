@@ -12,14 +12,15 @@ fi
 
 PDSMAC=$(wilink6calibrator get nvs_mac /tmp/pds/wifi/nvs_map.bin)
 
-umount /tmp/pds
-rm -r /tmp/pds
-
 if [ $? -ne 0 ]; then
     echo "Error extracting mac from pds nvs"
+    umount /tmp/pds
+    rm -r /tmp/pds
     exit 1
 fi
 
+umount /tmp/pds
+rm -r /tmp/pds
 
 echo "${PDSMAC}"
 
@@ -31,8 +32,6 @@ if [ "$PDSMAC" == "$CURRENTMAC" ]; then
 fi
 
 PDSMAC=${PDSMAC:19}
-
-echo ${PDSMAC}
 
 for DEV in `ls /sys/class/net`; do
   if [ -d "/sys/class/net/$DEV/wireless" ]; then 
@@ -52,8 +51,11 @@ if [ ! -f /tmp/wl128x-nvs.bin ]; then
 fi
 
 if [ -f /etc/udev/rules.d/70-persistent-net.rules ]; then
-    echo "Removeing stale persistent network name"
+    echo "Removeing stale persistent network names"
     sed -i '/${CURRENTMAC:19}/d' /etc/udev/rules.d/70-persistent-net.rules
+    sed -i '/wlan0/d' /etc/udev/rules.d/70-persistent-net.rules
+    sed -i '/wlan1/d' /etc/udev/rules.d/70-persistent-net.rules
+    udevadm control --reload-rules
 fi
 
 rm /lib/firmware/ti-connectivity/wl128x-nvs.bin
